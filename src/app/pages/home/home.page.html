@@ -1,0 +1,56 @@
+<!--
+  Frame Figma 1:2: avatar → cartão → CTA outline → rodapé (Home ativo no centro).
+-->
+<ion-content class="home-content" [fullscreen]="true" [scrollY]="true">
+  <div class="home-layout">
+    <section class="home-avatar-block" aria-label="Foto de perfil">
+      <ion-avatar class="home-avatar">
+        <img [src]="fotoUrl" [alt]="'Foto de ' + perfil.nome" width="236" height="236" />
+      </ion-avatar>
+    </section>
+
+    <ion-card class="home-card">
+      <ion-card-content class="home-card__inner">
+        <h1 class="home-name">{{ perfil.nome }}</h1>
+        <p class="home-turma">{{ perfil.turma }}</p>
+        <p class="home-id">
+          <span class="home-id__label">ID:&nbsp;</span>
+          <span class="home-id__value">{{ perfil.id }}</span>
+        </p>
+        <div class="home-role">
+          <p class="home-role__line">
+            <span class="home-role__accent">Estudante</span><span>:</span>
+          </p>
+          <p class="home-role__course">{{ perfil.curso }}</p>
+        </div>
+      </ion-card-content>
+    </ion-card>
+
+    <!--
+      Outline por defeito; em desktop o :hover preenche verde (frame 4:66 — só hover, não fixo).
+    -->
+    <ion-button
+      class="home-cta"
+      fill="outline"
+      expand="block"
+      shape="round"
+      routerLink="/sobre"
+    >
+      Sobre mim
+      <ion-icon slot="end" name="chevron-forward-outline" aria-hidden="true"></ion-icon>
+    </ion-button>
+
+    <div class="home-nav-row" aria-label="Navegação rápida">
+      <ion-button class="home-nav-button" fill="clear" routerLink="/home">
+        <ion-icon name="radio-button-off-outline" aria-hidden="true"></ion-icon>
+        Home
+      </ion-button>
+      <ion-button class="home-nav-button" fill="clear" routerLink="/config">
+        <ion-icon name="settings-outline" aria-hidden="true"></ion-icon>
+        Configurações
+      </ion-button>
+    </div>
+  </div>
+</ion-content>
+
+<app-nav-footer active="home"></app-nav-footer>

@@ -1,0 +1,52 @@
+<ng-container *ngIf="overlay.state$ | async as state">
+  <div *ngIf="state.show" class="global-overlay">
+    <div class="global-overlay__backdrop" (click)="close()"></div>
+    <div class="global-overlay__panel">
+      <div class="global-overlay__header">
+        <div class="global-overlay__title">
+          <ion-icon name="color-palette-outline"></ion-icon>
+          <span>Cores</span>
+        </div>
+        <button class="global-overlay__close" type="button" (click)="close()">
+          <ion-icon name="close-outline"></ion-icon>
+        </button>
+      </div>
+
+      <div class="global-overlay__list">
+        <button
+          class="global-overlay__item"
+          [class.selected]="state.selectedColor === '#afe607'"
+          (click)="selectColor('#afe607')"
+          type="button"
+        >
+          <span class="global-overlay__swatch global-overlay__swatch--green"></span>
+          Verde
+        </button>
+
+        <button
+          class="global-overlay__item"
+          [class.selected]="state.selectedColor === '#2bbcf5'"
+          (click)="selectColor('#2bbcf5')"
+          type="button"
+        >
+          <span class="global-overlay__swatch global-overlay__swatch--blue"></span>
+          Azul
+        </button>
+
+        <button
+          class="global-overlay__item"
+          [class.selected]="state.selectedColor === '#9b3dfc'"
+          (click)="selectColor('#9b3dfc')"
+          type="button"
+        >
+          <span class="global-overlay__swatch global-overlay__swatch--purple"></span>
+          Roxo
+        </button>
+      </div>
+
+      <ion-button class="global-overlay__confirm" expand="block" fill="outline" shape="round" (click)="close()">
+        Ok
+      </ion-button>
+    </div>
+  </div>
+</ng-container>

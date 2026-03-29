@@ -1,0 +1,21 @@
+<ion-footer class="app-nav-footer" [translucent]="false">
+  <div class="app-nav-footer__inner">
+    <!-- Links normais: navegação fiável com Angular Router (evita ion-tab-button + preventDefault) -->
+    <nav class="app-nav-footer__nav" aria-label="Navegação principal">
+      <a routerLink="/sobre" class="app-nav-footer__link" [class.app-nav-footer__link--current]="active === 'sobre'">
+        <ion-icon name="person-circle-outline" aria-label="Sobre mim"></ion-icon>
+      </a>
+      <a routerLink="/home" class="app-nav-footer__link" [class.app-nav-footer__link--current]="active === 'home'">
+        <ion-icon name="radio-button-off-outline" aria-label="Início"></ion-icon>
+      </a>
+      <a routerLink="/config" class="app-nav-footer__link" [class.app-nav-footer__link--current]="active === 'config'">
+        <ion-icon name="settings-outline" aria-label="Configurações"></ion-icon>
+      </a>
+    </nav>
+    <div
+      class="app-nav-footer__indicator"
+      [attr.data-active]="active"
+      aria-hidden="true"
+    ></div>
+  </div>
+</ion-footer>

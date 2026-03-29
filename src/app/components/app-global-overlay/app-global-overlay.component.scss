@@ -1,0 +1,115 @@
+:host {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  pointer-events: none;
+}
+
+.global-overlay {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  pointer-events: auto;
+}
+
+.global-overlay__backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+}
+
+.global-overlay__panel {
+  position: relative;
+  width: min(90%, 360px);
+  border-radius: 24px;
+  border: 2px dashed rgba(175, 230, 7, 0.85);
+  background: rgba(14, 15, 10, 0.98);
+  padding: 24px;
+  box-shadow: 0 0 36px rgba(175, 230, 7, 0.24);
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.global-overlay__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.global-overlay__title {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  color: #afe607;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.global-overlay__title ion-icon {
+  font-size: 28px;
+  color: #afe607;
+}
+
+.global-overlay__close {
+  border: none;
+  background: transparent;
+  color: #afe607;
+  font-size: 24px;
+  cursor: pointer;
+  padding: 6px;
+}
+
+.global-overlay__list {
+  display: grid;
+  gap: 14px;
+}
+
+.global-overlay__item {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  border-radius: 18px;
+  border: 2px solid rgba(175, 230, 7, 0.3);
+  background: rgba(255, 255, 255, 0.04);
+  color: #afe607;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 16px 18px;
+  cursor: pointer;
+  text-align: left;
+}
+
+.global-overlay__item.selected {
+  border-color: #afe607;
+  background: rgba(175, 230, 7, 0.16);
+}
+
+.global-overlay__swatch {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.global-overlay__swatch--green {
+  background: #afe607;
+}
+
+.global-overlay__swatch--blue {
+  background: #2bbcf5;
+}
+
+.global-overlay__swatch--purple {
+  background: #9b3dfc;
+}
+
+.global-overlay__confirm {
+  --border-width: 4px;
+  --border-radius: 34px;
+  --border-color: #afe607;
+  --background: transparent;
+  color: #ffffff;
+}

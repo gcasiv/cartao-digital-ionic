@@ -1,0 +1,194 @@
+/**
+ * Design tokens — frame 6:149 (428×926).
+ * Fundo #0e0f0a; neon principal #afe607; destaques secundários no texto #67c320.
+ */
+:host {
+  --sobre-bg: #0e0f0a;
+  --neon-color: var(--app-accent, #afe607);
+  --neon-soft: rgba(175, 230, 7, 0.45);
+  --accent-secondary: #67c320;
+  --sobre-text: #ffffff;
+  --card-max: 380px;
+  --card-radius: 24px;
+  --card-border: 4px solid var(--neon-color);
+  --card-min-h: 451px;
+  --content-pad-x: 24px;
+  --inner-pad-x: 36px;
+  display: block;
+  height: 100%;
+}
+
+.sobre-content {
+  --background: var(--sobre-bg);
+  font-family: 'Poppins', system-ui, sans-serif;
+  color: var(--sobre-text);
+}
+
+/**
+ * Espaço extra no fim do scroll para o rodapé fixo (102px + safe area).
+ */
+.sobre-shell {
+  box-sizing: border-box;
+  max-width: 428px;
+  margin: 0 auto;
+  padding: 42px var(--content-pad-x) calc(120px + env(safe-area-inset-bottom, 0));
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/** Avatar + ID na mesma linha visual (base alinhada ~149px no Figma) */
+.sobre-header-row {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.sobre-nav-row {
+  display: flex;
+  gap: 12px;
+  margin-top: 18px;
+}
+
+.sobre-nav-button {
+  flex: 1;
+  justify-content: center;
+  --border-width: 2px;
+  --border-color: var(--neon-color);
+  --color: var(--neon-color);
+  --background: transparent;
+  font-weight: 600;
+}
+
+.sobre-nav-button ion-icon {
+  margin-right: 10px;
+  font-size: 18px;
+}
+
+.sobre-avatar {
+  width: 108px;
+  height: 108px;
+  flex-shrink: 0;
+  --border-radius: 50%;
+  border: var(--card-border);
+  box-sizing: border-box;
+  padding: 3px;
+  background: var(--sobre-bg);
+  box-shadow: 0 0 14px var(--neon-soft);
+}
+
+.sobre-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.sobre-id {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: normal;
+  color: var(--sobre-text);
+  text-align: right;
+  white-space: nowrap;
+}
+
+.sobre-id__value {
+  color: var(--neon-color);
+}
+
+/**
+ * Cartões: interior igual ao fundo; borda neon + glow suave (pedido no briefing).
+ */
+.sobre-card {
+  width: 100%;
+  max-width: var(--card-max);
+  margin: 0;
+  border-radius: var(--card-radius);
+  border: var(--card-border);
+  box-shadow:
+    0 0 18px rgba(175, 230, 7, 0.18),
+    0 0 4px rgba(175, 230, 7, 0.35);
+  --background: var(--sobre-bg);
+  background: var(--sobre-bg);
+}
+
+.sobre-card--bio {
+  min-height: var(--card-min-h);
+}
+
+.sobre-card--projeto {
+  min-height: var(--card-min-h);
+}
+
+.sobre-card__body {
+  --padding-start: var(--inner-pad-x);
+  --padding-end: var(--inner-pad-x);
+  --padding-top: 24px;
+  --padding-bottom: 28px;
+}
+
+.sobre-card__body--projeto {
+  --padding-top: 24px;
+}
+
+/** Bio: 16px, justificado, Poppins Medium */
+.sobre-bio {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.45;
+  text-align: justify;
+  color: var(--sobre-text);
+}
+
+.sobre-bio__p {
+  margin: 0 0 0.65rem;
+}
+
+.sobre-bio__p--spacer {
+  min-height: 0.5rem;
+  margin-bottom: 0.35rem;
+}
+
+.sobre-bio__name {
+  color: var(--neon-color);
+}
+
+.sobre-bio__topic {
+  color: var(--accent-secondary);
+}
+
+.sobre-estudante {
+  margin: 1.25rem 0 0;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.4;
+  text-align: left;
+  color: var(--sobre-text);
+}
+
+.sobre-estudante__label {
+  color: var(--neon-color);
+}
+
+.sobre-projeto__p {
+  margin: 0 0 1rem;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.45;
+  text-align: justify;
+  color: var(--sobre-text);
+}
+
+.sobre-projeto__p:last-child {
+  margin-bottom: 0;
+}
+
+@media (max-width: 360px) {
+  :host {
+    --inner-pad-x: 28px;
+  }
+}

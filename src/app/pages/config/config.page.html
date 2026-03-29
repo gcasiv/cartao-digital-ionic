@@ -1,0 +1,98 @@
+<ion-content class="config-content" [fullscreen]="true">
+  <div class="config-layout">
+
+    <!-- 🔹 Ícone principal -->
+    <section class="config-hero" aria-label="Logo de configurações">
+      <ion-icon class="config-hero__icon" name="settings-outline"></ion-icon>
+    </section>
+
+    <!-- 🔹 Navegação rápida -->
+    <div class="config-nav-row">
+      <ion-button class="config-nav-button" fill="clear" routerLink="/home">
+        <ion-icon name="home-outline"></ion-icon>
+        Home
+      </ion-button>
+
+      <ion-button class="config-nav-button" fill="clear" routerLink="/sobre">
+        <ion-icon name="person-circle-outline"></ion-icon>
+        Sobre mim
+      </ion-button>
+    </div>
+
+    <!-- 🔹 Card principal -->
+    <ion-card class="config-card">
+      <ion-card-content class="config-card__inner">
+
+        <!-- 🌙 Tema -->
+        <div class="config-row config-row--theme">
+          <div class="config-row__label">
+            <!-- ✅ Ícone corrigido -->
+            <ion-icon class="config-row__icon" name="moon-outline"></ion-icon>
+            <span>Tema</span>
+          </div>
+
+          <ion-toggle
+            class="config-toggle"
+            [checked]="temaAtivo"
+            (ionChange)="onThemeToggle($event)"
+          ></ion-toggle>
+        </div>
+
+        <!-- 🔹 Ações -->
+        <button class="config-row config-action" type="button">
+          <span class="config-row__label">
+            <ion-icon class="config-row__icon" name="reader-outline"></ion-icon>
+            Editar cartão Home
+          </span>
+        </button>
+
+        <button class="config-row config-action" type="button">
+          <span class="config-row__label">
+            <ion-icon class="config-row__icon" name="camera-outline"></ion-icon>
+            Alterar Foto
+          </span>
+        </button>
+
+        <button class="config-row config-action" type="button" (click)="openColorPanel()">
+          <span class="config-row__label">
+            <ion-icon class="config-row__icon" name="color-palette-outline"></ion-icon>
+            Cores
+          </span>
+        </button>
+
+        <button class="config-row config-action" type="button">
+          <span class="config-row__label">
+            <ion-icon class="config-row__icon" name="document-text-outline"></ion-icon>
+            Editar cartão Sobre mim
+          </span>
+        </button>
+
+        <!-- 🔹 Botão salvar -->
+        <ion-button
+          class="config-save-button"
+          expand="block"
+          fill="outline"
+          shape="round"
+          (click)="savePreferences()"
+        >
+          Salvar Preferências
+        </ion-button>
+
+        <!-- 🔹 Mensagem -->
+        <div
+          *ngIf="message"
+          class="config-message"
+          [class.config-message--success]="messageType === 'success'"
+          [class.config-message--error]="messageType === 'error'"
+        >
+          {{ message }}
+        </div>
+
+      </ion-card-content>
+    </ion-card>
+
+  </div>
+</ion-content>
+
+<!-- 🔹 Rodapé -->
+<app-nav-footer active="config"></app-nav-footer>

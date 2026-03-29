@@ -1,0 +1,256 @@
+:host {
+  --cfg-bg: #0e0f0a;
+  --cfg-neon: var(--app-accent, #afe607);
+  --cfg-text: #ffffff;
+  display: block;
+  height: 100%;
+}
+
+.config-content {
+  --background: var(--cfg-bg);
+  color: var(--cfg-text);
+  font-family: 'Poppins', system-ui, sans-serif;
+}
+
+.config-layout {
+  max-width: 428px;
+  margin: 0 auto;
+  padding: 92px 24px calc(120px + env(safe-area-inset-bottom, 0));
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: clamp(24px, 6vw, 32px);
+}
+
+.config-nav-row {
+  width: 100%;
+  display: flex;
+  gap: 12px;
+  justify-content: space-between;
+}
+
+.config-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: grid;
+  place-items: center;
+}
+
+.config-overlay__backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+}
+
+.config-overlay__panel {
+  position: relative;
+  width: min(90%, 348px);
+  border: 2px dashed rgba(175, 230, 7, 0.8);
+  border-radius: 24px;
+  padding: 24px;
+  background: rgba(14, 15, 10, 0.96);
+  box-shadow: 0 0 40px rgba(175, 230, 7, 0.24);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.config-overlay__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.config-close-button {
+  background: transparent;
+  border: none;
+  color: var(--cfg-neon);
+  font-size: 26px;
+  cursor: pointer;
+  padding: 8px;
+}
+
+.config-color-list {
+  display: grid;
+  gap: 14px;
+}
+
+.config-color-item {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px 18px;
+  border-radius: 18px;
+  border: 2px solid rgba(175, 230, 7, 0.3);
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--cfg-neon);
+  cursor: pointer;
+  text-align: left;
+}
+
+.config-color-item.selected {
+  border-color: var(--cfg-neon);
+  background: rgba(175, 230, 7, 0.14);
+}
+
+.config-color-swatch {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.config-color-swatch--green {
+  background: #afe607;
+}
+
+.config-color-swatch--blue {
+  background: #2bbcf5;
+}
+
+.config-color-swatch--purple {
+  background: #9b3dfc;
+}
+
+.config-overlay__confirm {
+  --border-width: 4px;
+  --border-radius: 34px;
+  --border-color: var(--cfg-neon);
+  --background: transparent;
+  color: var(--cfg-text);
+}
+
+.config-nav-button {
+  flex: 1;
+  justify-content: center;
+  --border-width: 2px;
+  --border-color: var(--cfg-neon);
+  --color: var(--cfg-neon);
+  --background: transparent;
+  font-weight: 600;
+}
+
+.config-nav-button ion-icon {
+  margin-right: 10px;
+  font-size: 18px;
+}
+
+.config-hero {
+  width: 80px;
+  height: 80px;
+  display: grid;
+  place-items: center;
+  border: 4px solid var(--cfg-neon);
+  border-radius: 50%;
+  background: rgba(175, 230, 7, 0.08);
+  box-shadow: 0 0 32px rgba(175, 230, 7, 0.24);
+}
+
+.config-hero__icon {
+  font-size: 40px;
+  color: var(--cfg-neon);
+  filter: drop-shadow(0 0 14px rgba(175, 230, 7, 0.7));
+}
+
+.config-card {
+  width: 100%;
+  max-width: 380px;
+  border-radius: 24px;
+  border: 4px solid var(--cfg-neon);
+  background: rgba(255, 255, 255, 0.03);
+  box-shadow: none;
+}
+
+.config-card__inner {
+  padding: 28px 24px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.config-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+}
+
+.config-row__label {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  color: var(--cfg-neon);
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.config-row__icon {
+  font-size: 26px;
+  color: var(--cfg-neon);
+}
+
+.config-toggle {
+  --handle-background: #ffffff;
+  --background: rgba(175, 230, 7, 0.18);
+  --background-checked: var(--cfg-neon);
+  --border-radius: 999px;
+}
+
+.config-action {
+  width: 100%;
+  appearance: none;
+  border: none;
+  background: transparent;
+  padding: 18px 0;
+  text-align: left;
+  cursor: pointer;
+  color: inherit;
+}
+
+.config-action:hover {
+  background: rgba(175, 230, 7, 0.08);
+}
+
+.config-save-button {
+  --border-width: 4px;
+  --border-radius: 34px;
+  --border-color: var(--cfg-neon);
+  --background: transparent;
+  --color: var(--cfg-text);
+  font-size: 16px;
+  font-weight: 600;
+  padding: 18px 0;
+  margin-top: 10px;
+}
+
+.config-save-button:hover {
+  --background: rgba(175, 230, 7, 0.12);
+}
+
+.config-message {
+  width: 100%;
+  border-radius: 22px;
+  padding: 14px 16px;
+  font-size: 15px;
+  text-align: center;
+}
+
+.config-message--success {
+  color: #0adf3e;
+  background: rgba(10, 223, 62, 0.12);
+  border: 1px solid rgba(10, 223, 62, 0.4);
+}
+
+.config-message--error {
+  color: #ff4d4d;
+  background: rgba(255, 77, 77, 0.12);
+  border: 1px solid rgba(255, 77, 77, 0.4);
+}
+
+@media (min-width: 480px) {
+  .config-layout {
+    padding-top: 104px;
+  }
+}

@@ -1,0 +1,74 @@
+<!--
+  Ordem fiel ao Figma 6:149:
+  1) Linha superior: avatar (~108px) + ID alinhado à direita
+  2) Cartão “Sobre mim” (380×451, borda 4px #afe607, raio 24px)
+  3) Cartão “sobre o Projeto” (mesmas medidas)
+  4) Rodapé com ícone esquerdo ativo (Sobre)
+-->
+<ion-content class="sobre-content" [fullscreen]="true" [scrollY]="true">
+  <div class="sobre-shell">
+    <!-- Topo: foto menor que na Home (108×107 no layout) + ID no canto direito -->
+    <header class="sobre-header-row">
+      <ion-avatar class="sobre-avatar" aria-hidden="false">
+        <img [src]="fotoUrl" alt="Foto de perfil" width="108" height="108" />
+      </ion-avatar>
+      <p class="sobre-id">
+        <span class="sobre-id__label">ID:&nbsp;</span>
+        <span class="sobre-id__value">{{ idAcademico }}</span>
+      </p>
+    </header>
+
+    <div class="sobre-nav-row" aria-label="Navegação rápida">
+      <ion-button class="sobre-nav-button" fill="clear" routerLink="/home">
+        <ion-icon name="radio-button-off-outline" aria-hidden="true"></ion-icon>
+        Home
+      </ion-button>
+      <ion-button class="sobre-nav-button" fill="clear" routerLink="/config">
+        <ion-icon name="settings-outline" aria-hidden="true"></ion-icon>
+        Configurações
+      </ion-button>
+    </div>
+
+    <!-- Cartão 1: biografia (texto justificado, destaques em #afe607 e #67c320) -->
+    <ion-card class="sobre-card sobre-card--bio">
+      <ion-card-content class="sobre-card__body">
+        <div class="sobre-bio">
+          <p class="sobre-bio__p">
+            Meu nome é
+            <span class="sobre-bio__name">Gustavo Da Silva Casanova</span>, sou estudante de Análise e
+            Desenvolvimento de Sistemas.
+          </p>
+          <p class="sobre-bio__p">
+            Tenho interesse em
+            <span class="sobre-bio__topic">desenvolvimento mobile</span>,
+            <span class="sobre-bio__topic">front-end</span>
+            e
+            <span class="sobre-bio__topic">inteligência artificial</span>.
+          </p>
+          <p class="sobre-bio__p sobre-bio__p--spacer">&nbsp;</p>
+          <p class="sobre-bio__p">
+            Busco sempre aprender novas tecnologias e aprimorar minhas habilidades na área de programação,
+          </p>
+          <p class="sobre-bio__p">
+            com o objetivo de me tornar um desenvolvedor profissional.
+          </p>
+        </div>
+        <p class="sobre-estudante">
+          <span class="sobre-estudante__label">Estudante</span><span class="sobre-estudante__rest">: de Análise e Desenvolvimento de Sistemas</span>
+        </p>
+      </ion-card-content>
+    </ion-card>
+
+    <!-- Cartão 2: descrição do trabalho (conteúdo do frame) -->
+    <ion-card class="sobre-card sobre-card--projeto">
+      <ion-card-content class="sobre-card__body sobre-card__body--projeto">
+        <ng-container *ngFor="let bloco of textoProjeto">
+          <p class="sobre-projeto__p">{{ bloco }}</p>
+        </ng-container>
+      </ion-card-content>
+    </ion-card>
+  </div>
+</ion-content>
+
+<!-- Rodapé: Sobre ativo (indicador à esquerda, Figma 10:204) -->
+<app-nav-footer active="sobre"></app-nav-footer>

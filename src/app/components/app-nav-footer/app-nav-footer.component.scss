@@ -1,0 +1,79 @@
+/**
+ * `display: block` com o host permite o uso consistente do `ion-footer`
+ * e evita problemas de renderização em alguns navegadores.
+ */
+:host {
+  --nav-bg-tint: rgba(14, 15, 10, 0.2);
+  --nav-neon: var(--app-accent, #afe607);
+
+.app-nav-footer {
+  --background: transparent;
+  background: transparent;
+  box-shadow: none;
+}
+
+.app-nav-footer__inner {
+  position: relative;
+  min-height: 102px;
+  background: var(--nav-bg-tint);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  padding-bottom: env(safe-area-inset-bottom, 0);
+}
+
+.app-nav-footer__nav {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-around;
+  height: 88px;
+  padding-top: 13px;
+  margin: 0;
+}
+
+.app-nav-footer__link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  max-width: 33.33%;
+  min-height: 48px;
+  color: var(--nav-neon);
+  text-decoration: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.app-nav-footer__link ion-icon {
+  font-size: 40px;
+  color: var(--nav-neon);
+  filter: drop-shadow(0 0 6px rgba(175, 230, 7, 0.35));
+}
+
+.app-nav-footer__link--current ion-icon {
+  filter: drop-shadow(0 0 10px rgba(175, 230, 7, 0.55));
+}
+
+.app-nav-footer__indicator {
+  position: absolute;
+  bottom: 14px;
+  width: 80px;
+  height: 6px;
+  border-radius: 9.5px;
+  background: var(--nav-neon);
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.5);
+  pointer-events: none;
+  transition: left 0.22s ease, transform 0.22s ease;
+  transform: translateX(-50%);
+}
+
+.app-nav-footer__indicator[data-active='sobre'] {
+  left: 16.82%;
+}
+
+.app-nav-footer__indicator[data-active='home'] {
+  left: 50%;
+}
+
+.app-nav-footer__indicator[data-active='config'] {
+  left: 92.06%;
+}

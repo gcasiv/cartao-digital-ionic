@@ -1,0 +1,202 @@
+/**
+ * Tokens do frame Figma (node 1:2) — referência: largura de arte 428px.
+ * Fundo da tela: #0e0f0a | Acento / bordas / ícones ativos: #afe607
+ */
+:host {
+  --home-bg: #0e0f0a;
+  --home-neon: var(--app-accent, #afe607);
+  --home-text: #ffffff;
+  /** Largura máxima do cartão no Figma */
+  --home-card-max: 380px;
+  /** Avatar no Figma: 236px */
+  --home-avatar-size: min(236px, 55vw);
+  /** Botão no Figma: 226×72, pill */
+  --home-cta-width: min(226px, calc(100% - 48px));
+  --home-cta-height: 72px;
+  --home-radius-card: 24px;
+  --home-radius-cta: 35.5px;
+  --home-border: 4px solid var(--home-neon);
+  display: block;
+  height: 100%;
+}
+
+/** Conteúdo scrollável: fundo igual ao canvas do Figma */
+.home-content {
+  --background: var(--home-bg);
+  font-family: 'Poppins', system-ui, sans-serif;
+  color: var(--home-text);
+}
+
+/** Coluna centrada; padding lateral 24px como no cartão (left 24 no Figma) */
+.home-layout {
+  box-sizing: border-box;
+  max-width: 428px;
+  margin: 0 auto;
+  padding: 82px 24px 120px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: clamp(28px, 8vw, 40px);
+  min-height: 100%;
+}
+
+/** Avatar: círculo + anel verde (#afe607), espaço preto entre anel e foto no design */
+.home-avatar-block {
+  flex-shrink: 0;
+}
+
+.home-avatar {
+  width: var(--home-avatar-size);
+  height: var(--home-avatar-size);
+  --border-radius: 50%;
+  border: var(--home-border);
+  box-sizing: border-box;
+  padding: 4px;
+  background: var(--home-bg);
+}
+
+.home-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+/** Cartão: só contorno neon; interior igual ao fundo */
+.home-card {
+  width: 100%;
+  max-width: var(--home-card-max);
+  margin: 0;
+  border-radius: var(--home-radius-card);
+  border: var(--home-border);
+  box-shadow: none;
+  --background: var(--home-bg);
+  background: var(--home-bg);
+}
+
+.home-card__inner {
+  --padding-start: 22px;
+  --padding-end: 22px;
+  --padding-top: 20px;
+  --padding-bottom: 20px;
+  text-align: center;
+}
+
+/** Nome: 24px, Medium, cor neon (Figma 3:33) */
+.home-name {
+  margin: 0 0 12px;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: normal;
+  color: var(--home-neon);
+}
+
+/** Turma: 16px branco */
+.home-turma {
+  margin: 0 0 10px;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: normal;
+  color: var(--home-text);
+}
+
+/** ID: rótulo branco + número neon */
+.home-id {
+  margin: 0 0 14px;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: normal;
+  color: var(--home-text);
+}
+
+.home-id__value {
+  color: var(--home-neon);
+}
+
+/** Bloco Estudante + curso (centrado, 16px) */
+.home-role {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.35;
+  color: var(--home-text);
+}
+
+.home-role__line {
+  margin: 0 0 4px;
+}
+
+.home-role__accent {
+  color: var(--home-neon);
+}
+
+.home-role__course {
+  margin: 0;
+}
+
+/** Botão pill: borda 4px, altura 72, texto 24px neon */
+.home-cta {
+  width: var(--home-cta-width);
+  height: var(--home-cta-height);
+  margin: 0 auto;
+  --border-width: 4px;
+  --border-color: var(--home-neon);
+  --border-radius: var(--home-radius-cta);
+  --color: var(--home-neon);
+  --background: transparent;
+  font-family: inherit;
+  font-size: 24px;
+  font-weight: 500;
+  text-transform: none;
+  letter-spacing: normal;
+}
+
+.home-cta ion-icon {
+  font-size: 24px;
+  color: var(--home-neon);
+}
+
+/**
+ * Hover só com ponteiro fino (não “cola” no toque em mobile).
+ * Replica o preenchimento verde do estado hover do Figma, sem alterar o estado normal.
+ */
+@media (hover: hover) {
+  .home-cta:hover {
+    --background: var(--home-neon);
+    --color: var(--home-bg);
+    --border-color: var(--home-neon);
+    --background-hover: var(--home-neon);
+  }
+
+  .home-cta:hover ion-icon {
+    color: var(--home-bg);
+  }
+}
+
+@media (min-width: 480px) {
+  .home-layout {
+    padding-top: 96px;
+  }
+}
+
+.home-nav-row {
+  display: flex;
+  gap: 12px;
+  width: 100%;
+  justify-content: space-between;
+  margin-top: 12px;
+}
+
+.home-nav-button {
+  flex: 1;
+  justify-content: center;
+  --border-width: 2px;
+  --border-color: var(--home-neon);
+  --color: var(--home-neon);
+  --background: transparent;
+  font-weight: 600;
+}
+
+.home-nav-button ion-icon {
+  margin-right: 10px;
+  font-size: 18px;
+}
