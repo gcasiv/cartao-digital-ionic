@@ -1,11 +1,11 @@
 
-# 🚀 Cartão Digital Ionic
+# Cartão Digital Ionic
 
 Cartão Digital: Aplicativo mobile desenvolvido com **Ionic** e **TypeScript** que exibe informações pessoais em um cartão digital interativo, com navegação entre telas.
 
 
 
-## 📱 Descrição
+## Descrição
 
 O **Cartão Digital Ionic** é um aplicativo híbrido desenvolvido com **Ionic** e **Angular**, permitindo apresentar informações pessoais, fotos e detalhes do usuário de forma prática e intuitiva.
 
@@ -43,18 +43,30 @@ O projeto é modular, com componentes reutilizáveis e fáceis de expandir.
 
 ## 📸 Capturas de tela
 
-> Adicione suas imagens na pasta `screenshots/` do projeto.
+> As imagens abaixo são redimensionadas para melhor visualização.  
 
 ### 💻 Desktop
-![Tela Principal](screenshots/Desktop-Tela-Principal-do-Cartao-Digital.png)  
-![Tela Sobre](screenshots/Desktop-Tela-Secundaria-Sobre-mim.png)  
-![Tela Configurações](screenshots/Desktop-Tela-de-Configuracao.png)  
+<table>
+<tr>
+  <td><img src="screenshots/Desktop-Tela-Principal-do-Cartao-Digital.png" width="280"/></td>
+  <td><img src="screenshots/Desktop-Tela-Secundaria-Sobre-mim.png" width="280"/></td>
+  <td><img src="screenshots/Desktop-Tela-de-Configuracao.png" width="280"/></td>
+</tr>
+</table>
 
 ### 📱 Mobile
-![Tela Principal](screenshots/MOBILE-Tela-Principal-do-Cartao-Digital.png)  
-![Tela Sobre](screenshots/MOBILE-Tela-Secundaria-Sobre-mim-2.png)  
-![Tela Configuração](screenshots/MOBILE-Tela-de-Configuracao.png)  
-![Painel de Cores](screenshots/MOBILE-Tela-de-Configuracao-5-Painel-Cores.png)  
+<table>
+<tr>
+  <td><img src="screenshots/MOBILE-Tela-Principal-do-Cartao-Digital.png" width="150"/></td>
+  <td><img src="screenshots/MOBILE-Tela-Secundaria-Sobre-mim-2.png" width="150"/></td>
+  <td><img src="screenshots/MOBILE-Tela-de-Configuracao.png" width="150"/></td>
+  <td><img src="screenshots/MOBILE-Tela-de-Configuracao-5-Painel-Cores.png" width="150"/></td>
+</tr>
+</table>
+
+> Para ver as imagens em tamanho real, acesse a pasta `screenshots/`.
+
+---
 
 
 
@@ -65,7 +77,7 @@ O projeto é modular, com componentes reutilizáveis e fáceis de expandir.
 
 
 
-## 🚀 Como executar o projeto
+## Como executar o projeto
 
 ```bash
 # Clonar o repositório
