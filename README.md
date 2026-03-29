@@ -27,6 +27,7 @@ O projeto é modular, com componentes reutilizáveis e fáceis de expandir.
 - **SCSS** – estilos avançados  
 - **Capacitor** – integração com recursos do dispositivo  
 - **Git & GitHub** – controle de versão  
+- **Standalone Components** – componentes independentes que podem ser reutilizados sem precisar de módulos, facilitando a manutenção e expansão do app.
 
 
 
@@ -68,7 +69,7 @@ O projeto é modular, com componentes reutilizáveis e fáceis de expandir.
 
 ```bash
 # Clonar o repositório
->>>>>>> recuperar-readme
+
 git clone https://github.com/gcasiv/cartao-digital-ionic.git
 
 # Entrar na pasta
